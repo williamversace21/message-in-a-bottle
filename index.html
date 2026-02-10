@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Message</title>
+  <style>
+    body {
+      background: #f2efe9;
+      font-family: serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      padding: 2rem;
+    }
+    .poem {
+      max-width: 520px;
+      font-size: 1.2rem;
+      line-height: 1.7;
+    }
+  </style>
+</head>
+<body>
+  <div class="poem" id="poem"></div>
+
+  <script>
+    const openings = [
+      "This was not meant for you, but it waited anyway.",
+      "You are reading this because the bottle stayed intact.",
+      "Someone let this go without knowing where it would arrive."
+    ];
+
+    const middles = [
+      "The distance between release and discovery is doing the work.",
+      "Time has been holding this without instruction.",
+      "Whatever crossed the water is quieter now."
+    ];
+
+    const closings = [
+      "Keep what fits. Leave the rest sealed.",
+      "Nothing inside asks to be returned.",
+      "The vessel is empty again."
+    ];
+
+    function pick(arr) {
+      return arr[Math.floor(Math.random() * arr.length)];
+    }
+
+    const poem = [
+      pick(openings),
+      "",
+      pick(middles),
+      "",
+      pick(closings)
+    ].join("<br>");
+
+    document.getElementById("poem").innerHTML = poem;
+  </script>
+</body>
+</html>
